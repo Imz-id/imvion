@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Struktur & Cara Edit Website IMVION — IMVION</title>
+  <meta name="description" content="Panduan cepat memahami struktur file IMVION dan cara mengubah konten tanpa banyak coding.">
+  <meta name="theme-color" content="#050505">
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <!--
+    TEMPLATE ARTIKEL DOKUMENTASI
+    =============================
+    Cara pakai:
+    1. Copy file ini, beri nama baru, contoh: documentation/tutorial-baru.html
+    2. Ganti <title>, konten di dalam <div class="doc-article-body">, dan judul <h1>.
+    3. Tambahkan entry baru di js/documentation.js yang url-nya menunjuk ke file ini.
+    Header & footer di bawah ini sama persis di semua halaman — tidak perlu diubah.
+  -->
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="../index.html" class="brand" aria-label="IMVION — beranda">
+        <img data-logo src="../assets/images/logo.svg" alt="" width="30" height="30">
+        <span class="brand-text" data-site="name">IMVION</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Navigasi utama">
+        <a href="../index.html">Home</a>
+        <div class="nav-dropdown">
+          <a href="../documentation.html" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+            Dokumentasi
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+          </a>
+          <div class="nav-dropdown-menu" data-nav="doc-dropdown"></div>
+        </div>
+        <a href="../tools.html">Tools</a>
+        <a href="../about.html">About</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn" type="button" data-action="nav-search" aria-label="Cari">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
+        <button class="icon-btn" type="button" data-action="toggle-theme" aria-label="Ganti mode terang/gelap">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+        </button>
+        <button class="hamburger" type="button" data-action="toggle-menu" aria-label="Buka menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-panel">
+      <a href="../index.html">Home</a>
+      <a href="../documentation.html">Dokumentasi</a>
+      <div class="mobile-sub" data-nav="doc-mobile"></div>
+      <a href="../tools.html">Tools</a>
+      <a href="../about.html">About</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <article class="doc-article reveal">
+        <a class="back-link" href="../documentation.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+          Kembali ke Dokumentasi
+        </a>
+        <h1>Struktur &amp; Cara Edit Website IMVION</h1>
+        <p class="doc-meta">Website · Panduan</p>
+
+        <div class="doc-article-body">
+          <p>Website IMVION dibuat agar bisa diedit tanpa perlu menyentuh banyak kode. Hampir semua konten diatur dari dua file konfigurasi.</p>
+
+          <h2>js/config.js</h2>
+          <p>Berisi nama situs, tagline, logo, background, daftar sosial media, konten halaman About, dan seluruh daftar tools. Tambah/hapus tool cukup dengan menambah/menghapus satu baris object di array <code>tools</code>.</p>
+
+          <h2>js/documentation.js</h2>
+          <p>Berisi daftar dokumentasi yang tampil di halaman Dokumentasi. Menambah dokumentasi baru = duplikat <code>documentation/example.html</code>, lalu tambahkan satu entry baru di file ini.</p>
+
+          <h2>assets/images/</h2>
+          <p>Semua gambar (logo, background, thumbnail dokumentasi) disimpan di sini sebagai file lokal. Mengganti tampilan cukup mengganti file dengan nama yang sama, tanpa mengedit kode.</p>
+
+          <h2>css/style.css</h2>
+          <p>Seluruh warna diatur lewat CSS variable di bagian paling atas file (<code>:root</code>), sehingga mengganti tema cukup dilakukan dari satu tempat.</p>
+
+          <p>Detail lebih lengkap beserta contoh langkah-demi-langkah tersedia di file <code>README.md</code> pada bagian "CUSTOMIZATION".</p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="footer-brand" data-site="name">IMVION</span>
+      <span class="footer-copy" data-footer="copy"></span>
+      <div class="footer-social" data-footer="socials"></div>
+    </div>
+  </footer>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/documentation.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+            </html>
+                                      
