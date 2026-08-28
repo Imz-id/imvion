@@ -100,7 +100,7 @@
     return icons[name] || icons.mail;
   }
 
-  /* ---------- Theme toggle (dark default, persisted) ---------- */
+ /* ---------- Theme toggle (dark default, persisted) ---------- */
   function initTheme() {
     const saved = localStorage.getItem("imvion-theme");
     if (saved) document.documentElement.setAttribute("data-theme", saved);
